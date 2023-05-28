@@ -1,0 +1,105 @@
+Namaste React
+React is js library
+React can exists without jsx, redux, typescript...
+
+const heading = React.createElement("h1", {}, "Hello React World!!!");
+console.log(heading);
+
+the react heading element is nothing but a object of type h1
+
+can we have multiple roots?
+how much big application you develop you'll use one root & render at once
+
+In html root element If we have so many h1 tags & some content is there what render method heading'll do
+It'll overrides all content & show only react root element that is render heading.
+
+CDN, Emmet, crossorigin, creatElement {}, async & defer
+
+1.what is diff b/w react & react dom?
+React and ReactDOM are both libraries in the React ecosystem, but they serve different purposes:
+React: React is a JavaScript library for building user interfaces. It provides a component-based architecture that allows developers to create reusable UI components and manage their state effectively. React focuses on the logic and structure of the application, allowing developers to define how the UI should be rendered based on changes in data or user interactions. React provides a set of APIs and utilities for creating and managing components, handling state, and performing efficient updates to the DOM.
+ReactDOM: ReactDOM is a package that provides the integration between React and the browser's Document Object Model (DOM). It serves as the glue between React components and the actual HTML DOM elements. ReactDOM is responsible for rendering React components into the browser and updating the DOM when changes occur. It provides methods such as `ReactDOM.render()` to render a React component into a specific DOM element..
+In summary, React is the core library that provides the building blocks and logic for creating UI components, while ReactDOM is the library responsible for rendering those React components into the DOM and managing their lifecycle. React abstracts away the complexities of working with the DOM directly, allowing developers to focus on building the UI and managing state. ReactDOM handles the actual rendering and updates of those components in the browser environment.
+
+2.what is Emmet?
+Emmet is a popular plugin or toolkit that enhances the workflow of web developers and designers by providing shortcuts and abbreviations for writing HTML and CSS code. It allows you to write code quickly and efficiently, reducing the amount of typing required.
+With Emmet, you can use simple and intuitive syntax to generate complex code snippets. It enables you to express HTML and CSS structures using abbreviations that expand into complete code blocks. For example, you can type div.container>ul.list>li.item*5 and Emmet will expand it into something check on your vsCode.
+Overall, Emmet is a powerful tool that helps developers write HTML and CSS code faster and more efficiently, allowing them to be more productive in their web development workflow.
+
+3.Difference between a Library and Framework? 
+Library: A library is a collection of pre-written code modules or functions that developers can use to perform specific tasks or solve specific problems. Libraries are designed to be reusable and provide functionality that can be integrated into an application or project. Libraries are generally more flexible and allow developers to retain more control over the overall structure and flow of their application.
+Framework: A framework, on the other hand, is a more comprehensive and structured software environment that provides a foundation and structure for building applications. It defines a set of rules, conventions, and patterns that guide the development process. Frameworks often include a collection of libraries, tools, and utilities that work together to provide a complete solution for a specific type of application or problem domain. Developers build their application by filling in the gaps or extending the provided functionality within the framework's predefined structure. Frameworks provide a higher level of abstraction and handle common tasks and decisions, which can speed up development but may also limit flexibility compared to using individual libraries.
+In summary, a library is a collection of code modules or functions that provides specific functionality, while a framework is a more encompassing structure that includes libraries and provides a foundation for building applications. Libraries are typically more flexible and allow developers to choose what components to use, while frameworks provide a predefined structure and enforce specific conventions for building applications.
+
+4.What is CDN? Why do we use it?
+CDN stands for Content Delivery Network. It is a geographically distributed network of servers that work together to deliver web content, such as images, CSS files, JavaScript files, videos, and other static assets, to users. The primary purpose of a CDN is to improve the performance, availability, and reliability of content delivery.
+Here are some reasons why CDNs are used:
+  1. Improved Performance: CDNs help deliver content more efficiently by caching and storing copies of content in multiple server locations. This allows users to access the content from a server that is closer to their geographic location, resulting in faster loading times and reduced latency.
+  2. Scalability: CDNs can handle high traffic loads and distribute the load across multiple servers. By offloading content delivery to a CDN, the origin server can focus on handling dynamic requests, improving the overall scalability and reliability of the website.
+  3. Global Reach: CDNs have servers distributed across different regions and countries, allowing websites to serve content to users around the world with reduced latency. This is particularly beneficial for websites with an international audience.
+Overall, CDNs offer improved performance, scalability, global reach, bandwidth savings, and enhanced security. They are widely used to optimize the delivery of web content and improve the user experience for websites and web applications.
+
+5.Why is React known as React?
+React is known as "React" because it reflects the core concept behind the library, which is reactive and efficient user interface rendering.
+The name "React" comes from the idea of reacting to changes in application state and efficiently updating the user interface. React was developed by Facebook and initially released in 2013 to address the challenges of building complex and interactive user interfaces for large-scale web applications.
+React introduces a component-based architecture where the user interface is broken down into reusable components. Each component has its own state and renders a part of the UI based on that state. React utilizes a virtual DOM (Document Object Model) to efficiently manage updates and render the UI.
+When there are changes in the application state, React analyzes the differences between the previous and current states and updates only the necessary parts of the UI. This approach minimizes unnecessary DOM manipulations and ensures efficient rendering, resulting in a highly performant user interface.
+The name "React" encapsulates the core philosophy of the library, which is to provide a reactive and responsive way of building user interfaces. React allows developers to create dynamic, interactive, and highly responsive UIs by efficiently handling state changes and rendering updates.
+
+6.What is crossorigin in script tag?
+The crossorigin attribute in the <script> tag is used to specify the CORS (Cross-Origin Resource Sharing) behavior for fetching external JavaScript files. CORS is a mechanism that allows web browsers to securely make requests for resources (such as scripts, fonts, or images) from a different origin (domain, protocol, or port) than the one serving the web page.
+When you include an external JavaScript file in your web page using the <script> tag, the browser will send an HTTP request to fetch that file from the specified URL. The crossorigin attribute provides additional information to the browser about how it should handle that request and whether it should enforce CORS restrictions.
+The crossorigin attribute is primarily used for security reasons to prevent unauthorized access to resources and ensure proper handling of cross-origin requests.
+
+7.What is difference between react.development.js and react.production.js files via CDN?
+The difference between react.development.js and react.production.js files via a CDN lies in how they are optimized for development and production environments:
+react.development.js: This file is intended for development purposes. It contains the full, unminified source code of the React library. It includes additional warnings, error messages, and development-oriented features, such as helpful debugging information and runtime checks. The file size is larger compared to the production version as it includes all the development-specific code and features. It is meant to aid developers during the development and debugging process.
+react.production.js: This file is optimized for production environments. It is a minified and optimized version of the React library, typically used in production deployments. The production version removes unnecessary whitespace, comments, and debug information, resulting in a smaller file size. It also disables development-specific features and checks, prioritizing performance and efficiency.
+
+8.What is difference between defer & async in JS?
+The `async` and `defer` attributes in JavaScript are used to control the execution and loading of external script files in HTML documents. They have different behaviors and effects on how the scripts are fetched and executed:
+1. `async` attribute:
+   - When the `async` attribute is added to a `<script>` tag, the script file is fetched asynchronously while the HTML parsing continues. This means that the script file is downloaded in parallel with the HTML parsing process.
+   - Once the script file is downloaded, it will be executed immediately, regardless of whether the HTML parsing has completed or not. The execution of the script will pause the HTML parsing until it completes.
+   - If multiple scripts have the `async` attribute, they may be executed in any order as soon as they are downloaded.
+   - Scripts with the `async` attribute are not guaranteed to execute in the order in which they appear in the HTML document.
+   - Use the `async` attribute when the order of script execution does not matter, and the script does not rely on other scripts or the DOM being fully loaded.
+2. `defer` attribute:
+   - When the `defer` attribute is added to a `<script>` tag, the script file is fetched asynchronously, similar to the `async` attribute.
+   - However, scripts with the `defer` attribute are guaranteed to be executed in the order in which they appear in the HTML document.
+   - The execution of `defer` scripts is delayed until the HTML parsing is complete but before the `DOMContentLoaded` event is fired. This means that the scripts will execute in the order they are encountered in the HTML, after the HTML has been fully parsed.
+   - Multiple scripts with the `defer` attribute will be executed in the order in which they appear in the HTML document.
+   - Use the `defer` attribute when the order of script execution is important, and the script relies on the DOM being fully loaded or other scripts being executed in a specific order.
+In summary, the `async` attribute allows scripts to be fetched and executed asynchronously, without blocking the HTML parsing, while the `defer` attribute fetches scripts asynchronously but defers their execution until after the HTML parsing is complete. The key difference is that scripts with the `defer` attribute are guaranteed to execute in the order they appear in the HTML, whereas `async` scripts may execute in any order.
+
+
+Bundler - vite, parcel, webpack
+
+In create-react-app the bundler that they use Is webpack & babel
+
+npm It manages all our packages But It's not stand for node package manager.
+
+npm init
+
+why do we use npm?
+we use npm because we want lot of packages in our app, react app cannot by built just by injecting react in our website
+
+npm install parcel - we don't want our parcel to be in production by using the above cmd It'll present in production server but we don't want that we want only in our local developer machine for that we use below cmd.
+-D means dev dependency or we can use 
+--save-dev in place of -D
+npm install -D parcel
+we need our parcel in dev dependencies
+
+what is dependency?
+It's nothing but a all packages that my project need.
+
+what is package.json & package-lock.json?
+package-lock.json is very imp file & It locks the version & u never keep it on git ignore.
+
+what is caret & tilde in package.json?
+
+what is hash & sha512, integriety in package-lock.json?
+
+node_modules is a database for our npm
+can we push our node_module to git? no
+package-lock.json'll create another node_modules on server.
